@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px
+}
+
+.heading {
+  text-align: center;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 36px;
+  color: #202020;
+  margin-top: 20px;
+  text-shadow: 2px 8px 12px #c5c5c5;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  background-color: #f2f2f2;
+  gap: 10px;
+}
+
+.button-group .button {
+  border: none;
+  width: 33%;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 24px;
+  background-color: #f2f2f2;
+  color: #202020;
+}
+
+.button-group .button:hover {
+  width: 33%;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 24px;
+  background-color: #202020;
+  color: #f2f2f2;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-group .active {
+  background-color: #202020;
+  color: #f2f2f2;
+  border-radius: 10px;
+}
+
+#menButton:hover::before {
+  content:  "" "\f183";
+  font-family: "Font Awesome 5 Free"; 
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+#womenButton:hover::before {
+  content:  "" "\f182";
+  font-family: "Font Awesome 5 Free"; 
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+#kidsButton:hover::before {
+  content:  "" "\f1ae";
+  font-family: "Font Awesome 5 Free"; 
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.items-list {
+  width: 80vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2vw;
+}
+
+.items-list .item {
+  max-width: 21%;
+  flex: 1 0 21%;
+  border-radius: 10px;
+}
+
+.items-list .item .img-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.items-list .item .information-container, .cart-container {
+  height: 20%;
+}
+
+.items-list .item .information-container p {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+#title-cloth {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 24px;
+  max-width: 50%;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+
+#vendor {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.cart-container button {
+  background-color: #202020;
+  color: #f2f2f2;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  height: 45px;
+  padding: 10x 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+#discounted-price {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#original-price {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 16px;
+  color: #747474;
+  text-decoration: line-through;
+}
+
+#discount {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  color: red;
+}
+
+#img img{
+  width: 100%;
+  z-index: -1;
+}
+
+#badge_text {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 7px 15px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    gap: 30px
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 0;
+  }
+
+  .button-group .button:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .button-group .button:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .button-group .button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .button-group .button:hover {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #menButton:hover::before, #kidsButton:hover::before, #womenButton:hover::before {
+    font-size: 16px;
+  }
+
+  .items-list .item {
+    max-width: 100%;
+    flex: 1 0 100%;
+    margin-bottom: 20px;
+  }
+
+}
+
+
+/* Media Query for Tablet Screens (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {   
+
+  .heading {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .button-group {
+    border-radius: 10px;
+  }
+
+  .button-group .button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .button-group .button:hover {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #menButton:hover::before, #kidsButton:hover::before, #womenButton:hover::before {
+    font-size: 16px;
+  }
+
+  .items-list .item {
+    max-width: 48%;
+    flex: 1 0 48%;
+    margin-bottom: 20px;
+  }
